@@ -21,7 +21,7 @@ amqp.connect('amqp://localhost', (err, conn) => {
 
         // queue 1 key: *.orange.* -> interested in orange animal -> can recieve message with 3 words: speed.orange.tiger 
         // queue 2 key: *.*.rabbit -> interested in rabbit -> can recieve message meesage with 3 words: speed.white.rabbit
-        // queue 3 key: lazy# -> interested in lazy animal -> can revieve massage with the word lazy at the head: lazy.dog | lazy.black.cat.is.sick
+        // queue 3 key: lazy.# -> interested in lazy animal -> can revieve massage with the word lazy at the head: lazy.dog | lazy.black.cat.is.sick
         // *. one word, #.zero or many words
 
         ch.publish(ex, key, Buffer.from(msg))
